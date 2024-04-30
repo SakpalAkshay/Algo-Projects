@@ -600,7 +600,7 @@ const OptimalDeliveryRouteSystem = () => {
           </div>
           {console.log("Ref:", selectAlgoRef)}
           {selectAlgoRef.current?.value === "All" && (
-            <div className="graph" style={{marginTop:"50px", marginRight:"200px"}}>
+            <div className="graph" style={{marginTop:"60px", marginRight:"180px"}}>
               <Bar
                 data={{
                   labels: ["Nearest Neighbor", "BruteForce", " Minimum Spanning Tree"],
