@@ -639,7 +639,7 @@ const OptimalDeliveryRouteSystem = () => {
                     },
                     y: {
                       beginAtZero: true,
-                      title:{display:true, text:"Execution Time (ms)", font:{size:14,weight:"bold"}}
+                      title:{display:true, text:"Execution Time (ms)", font:{size:16,weight:"normal"}}
                     },
                   },
                 }}
