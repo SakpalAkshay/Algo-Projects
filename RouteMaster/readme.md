@@ -1,8 +1,10 @@
-**Overview**
+**Overview of Route Master**
 
-Developed an optimal delivery route system for finding the shortest route between multiple locations. This project uses algorithms like Nearest Neighbor, Brute Force algorithm and Minimum Spanning Tree to solve the problem.
+Developed an route system for finding the shortest route between multiple locations. This project uses algorithms like Nearest Neighbor, Brute Force algorithm and Minimum Spanning Tree to solve the problem.
 
 I have utilized the Google Maps API to calculate distances between routes and display them on the frontend. The user can add the locations and has the option to select any one of the three algorithms and get the route as the output.
+
+Based on the Concept of Travelling Salesman Problem, this application finds shortest route between cities returing back to the starting one.
 
 
 
