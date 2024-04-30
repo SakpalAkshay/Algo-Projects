@@ -65,7 +65,7 @@ const YourReactComponent = ({setLandingPage}) => {
           </button>
           {/* GitHub link with logo */}
           <a
-            href="https://github.com/SakpalAkshay"
+            href="https://github.com/SakpalAkshay/Algo-Projects/tree/main/RouteMaster"
             target="_blank"
             rel="noopener noreferrer"
             style={githubLinkStyle}
