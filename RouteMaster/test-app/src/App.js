@@ -651,6 +651,49 @@ const OptimalDeliveryRouteSystem = () => {
                   },
                 }}
               />
+                <Bar
+                data={{
+                  labels: ["Nearest Neighbor", "BruteForce", " Minimum Spanning Tree"],
+                  datasets: [
+                    {
+                      labels: "Total Distances in Miles",
+                      data: [
+                        (newDistance[0].totalDistance)/1609.24.toFixed(2),
+                       (newDistance[1].totalDistance)/1609.24.toFixed(2),
+                        (newDistance[2].totalDistance)/1609.24.toFixed(2),
+                      ],
+                      backgroundColor: [
+                        "rgba(232, 241, 120, 0.8)",
+                        "rgba(200, 170, 250, 0.8)",
+                        "rgba(230, 60,60, 0.8)",
+                      ],
+                      borderColor: [
+                        "rgba(255, 99, 132, 1)",
+                        "rgba(54, 162, 235, 1)",
+                        "rgba(0, 100, 0, 1)",
+                      ],
+                      borderWidth: 1,
+                    },
+                  ],
+                }}
+                options={{
+                  indexAxis: "x",
+                  plugins: {
+                    legend: {
+                      display: true,
+                    },
+                  },
+                  scales: {
+                    x: {
+                      beginAtZero: true,
+                    },
+                    y: {
+                      beginAtZero: true,
+                      title:{display:true, text:"Total Distance", font:{size:14,weight:"bold"}}
+                    },
+                  },
+                }}
+              />
             </div>
           )}
         </div>
