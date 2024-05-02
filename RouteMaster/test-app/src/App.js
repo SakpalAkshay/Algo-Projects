@@ -414,6 +414,7 @@ const OptimalDeliveryRouteSystem = () => {
                   <Button
                     colorScheme="orange"
                     onClick={(e) => handleAddLocation(e)}
+                    isDisabled={address.trim() === ''} 
                   >
                     Add Location
                   </Button>
@@ -490,7 +491,11 @@ const OptimalDeliveryRouteSystem = () => {
                   </select>
                 </FormControl>
                 <div style={{ padding: "5px" }}>
-                  <Button colorScheme="green" type="submit">
+                  <Button 
+                  colorScheme="green" 
+                  type="submit"
+                  isDisabled={deliveryLocations.length === 0}
+                  >
                     Find Route
                   </Button>
                   <Button
