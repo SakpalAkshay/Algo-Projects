@@ -385,13 +385,14 @@ const OptimalDeliveryRouteSystem = () => {
       {landingPage ? (
         <YourReactComponent setLandingPage={setLandingPage}/>
       ) : (
-        <div style={{backgroundColor:"white", color:"black"}}>
+       <div style={{backgroundColor:"white", color:"black"}}>
           <div className="mainapp">
-            <div className="locations" style={{ display: "flex", flexDirection: "column", justifyContent:"flex-start", height:"100vh", fontFamily:"Arial", paddingLeft:"20px", paddingTop:"40px", width:"100%" }}>
+            <div className="locations" style={{ display: "flex", flexDirection: "row", justifyContent:"center", height:"40vh", width:"100vw", fontFamily:"Arial", marginTop:"40px"}}>
+            <div style={{paddingRight:"30px"}}> 
+              <form onSubmit={handleAddLocation}>
               <Text fontSize="xl" fontWeight="bold">
                 Enter Locations:
               </Text>
-              <form onSubmit={handleAddLocation}>
               {/* <form> */}
                 <FormControl>
                   <FormLabel>Delivery Location:</FormLabel>
@@ -413,7 +414,6 @@ const OptimalDeliveryRouteSystem = () => {
                   <Button
                     colorScheme="orange"
                     onClick={(e) => handleAddLocation(e)}
-                    isDisabled={address.trim() === ''} 
                   >
                     Add Location
                   </Button>
@@ -426,7 +426,8 @@ const OptimalDeliveryRouteSystem = () => {
                   </Button>
                 </div>
               </form>
-            <br></br>
+              </div>
+              <div style={{paddingRight:"30px"}}>
               <form>
                 <Text fontSize="xl" fontWeight="bold" marginBottom="20px">
                   Delivery Locations:
@@ -463,7 +464,8 @@ const OptimalDeliveryRouteSystem = () => {
               ))}
             </ul> */}
               </form>
-
+              </div>
+              <div style={{paddingRight:"30px"}}>
               <form onSubmit={handleSubmit} required>
                 <FormControl>
                   <FormLabel fontSize="xl" fontWeight="bold">
@@ -488,7 +490,7 @@ const OptimalDeliveryRouteSystem = () => {
                   </select>
                 </FormControl>
                 <div style={{ padding: "5px" }}>
-                  <Button colorScheme="green" type="submit" isDisabled={deliveryLocations.length === 0}>
+                  <Button colorScheme="green" type="submit">
                     Find Route
                   </Button>
                   <Button
@@ -500,7 +502,7 @@ const OptimalDeliveryRouteSystem = () => {
                   </Button>
                 </div>
               </form>
-
+              </div>
               <div className="tourpath">
                 {selectedAlgorithm && (
                   <p>
@@ -558,8 +560,8 @@ const OptimalDeliveryRouteSystem = () => {
                 </form>
               </div>
             </div>
-
-            <div className="map">
+          </div>
+          <div className="map" style={{width:"80vw", height:"80vh", margin:"auto"}}>
               <GoogleMap
                 onLoad={(map) => (mapRef.current = map)}
                 mapContainerStyle={containerStyle}
@@ -598,10 +600,9 @@ const OptimalDeliveryRouteSystem = () => {
                 )}
               </GoogleMap>
             </div>
-          </div>
           {console.log("Ref:", selectAlgoRef)}
           {selectAlgoRef.current?.value === "All" && (
-            <div className="graph" style={{marginTop:"60px", marginRight:"180px"}}>
+            <div className="graph" style={{marginTop:"50px", marginRight:"200px"}}>
               <Bar
                 data={{
                   labels: ["Nearest Neighbor", "BruteForce", " Minimum Spanning Tree"],
@@ -640,7 +641,7 @@ const OptimalDeliveryRouteSystem = () => {
                     },
                     y: {
                       beginAtZero: true,
-                      title:{display:true, text:"Execution Time (ms)", font:{size:16,weight:"normal"}}
+                      title:{display:true, text:"Execution Time (ms)", font:{size:14,weight:"bold"}}
                     },
                   },
                 }}
