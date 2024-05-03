@@ -17,7 +17,7 @@ import {
 } from "@react-google-maps/api";
 import YourReactComponent from "./Landing";
 
-const apiKey = "Your API KEY here";
+const apiKey = "Your Api Key Here";
 
 Chart.register(CategoryScale, LinearScale, BarElement);
 
@@ -62,6 +62,7 @@ const OptimalDeliveryRouteSystem = () => {
     "TSP Brute Force": 0,
     TSPMST: 0,
   });
+  const [newDistance, setNewDistance] = useState([]);
 
   console.log(markersWithLabels);
 
@@ -175,7 +176,6 @@ const OptimalDeliveryRouteSystem = () => {
 
       // Generating the distance matrix
       console.log("Distance Matrix:", distances);
-      
 
       handleSelectAlgorithm();
 
@@ -209,6 +209,7 @@ const OptimalDeliveryRouteSystem = () => {
           { tour: tourBruteForce, totalDistance: totalDistanceBruteForce },
           { tour: tourMST, totalDistance: totalDistanceMST },
         ];
+        setNewDistance(distancesArray);
         console.log("Distances Array:", distancesArray);
 
         // Find the shortest distance among the three algorithms
@@ -385,7 +386,7 @@ const OptimalDeliveryRouteSystem = () => {
       {landingPage ? (
         <YourReactComponent setLandingPage={setLandingPage}/>
       ) : (
-       <div style={{backgroundColor:"white", color:"black"}}>
+        <div style={{backgroundColor:"white", color:"black"}}>
           <div className="mainapp">
             <div className="locations" style={{ display: "flex", flexDirection: "row", justifyContent:"center", height:"40vh", width:"100vw", fontFamily:"Arial", marginTop:"40px"}}>
             <div style={{paddingRight:"30px"}}> 
@@ -414,7 +415,6 @@ const OptimalDeliveryRouteSystem = () => {
                   <Button
                     colorScheme="orange"
                     onClick={(e) => handleAddLocation(e)}
-                    isDisabled={address.trim() === ''} 
                   >
                     Add Location
                   </Button>
@@ -491,11 +491,7 @@ const OptimalDeliveryRouteSystem = () => {
                   </select>
                 </FormControl>
                 <div style={{ padding: "5px" }}>
-                  <Button 
-                  colorScheme="green" 
-                  type="submit"
-                  isDisabled={deliveryLocations.length === 0}
-                  >
+                  <Button colorScheme="green" type="submit">
                     Find Route
                   </Button>
                   <Button
@@ -651,7 +647,7 @@ const OptimalDeliveryRouteSystem = () => {
                   },
                 }}
               />
-                <Bar
+              <Bar
                 data={{
                   labels: ["Nearest Neighbor", "BruteForce", " Minimum Spanning Tree"],
                   datasets: [
@@ -695,6 +691,7 @@ const OptimalDeliveryRouteSystem = () => {
                 }}
               />
             </div>
+            
           )}
         </div>
       )}
